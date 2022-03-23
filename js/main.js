@@ -59,7 +59,7 @@ ${kittenDescThree}
 
 //catList.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-/* Parte 1} */
+// Parte 2.3}
 const input_search_desc = document.querySelector('.js_in_search_desc');
 input_search_desc.value = 'cariñoso';
 const descrSearchText = input_search_desc.value;
@@ -78,7 +78,7 @@ if( kittenDescThree.includes(descrSearchText) ) {
 
 
 
-/* Parte 2 */
+// Parte 2.3 
 const formElement = document.querySelector('.js-new-form');
 if (formElement.classList.contains('collapsed')) {
   formElement.classList.remove("collapsed");
@@ -86,15 +86,34 @@ if (formElement.classList.contains('collapsed')) {
   formElement.classList.add("collapsed");
 }
 
-// formElement.classList.toggle("collapsed");
+// Parte 2.4 
+
+const clickButton = document.querySelector('.js_click');
 
 
+ clickButton.addEventListener("click", (event) =>{ 
+  formElement.classList.toggle("collapsed");
+});
+
+//Terminar ejercicio 
+
+const btnAdd = document.queryselector(".js-btn-add");
+btnAdd.addEventListener("click", (event) =>{ 
+  if (valueDesc === "" && valuePhoto === "" && valueName === "") {
+    //completa el código
+  } else {
+    //completa el código
+  }
+
+});
+
+const inputDesc = document.querySelector(".js-input-desc");
+const inputPhoto = document.querySelector(".js-input-photo");
+const inputName = document.querySelector(".js-input-name");
+const labelMesageError = document.querySelector(".js-label-error");
+
+const valueDesc = inputDesc.value;
+const valuePhoto = inputPhoto.value;
+const valueName = inputName.value;
 
 
-/* Bonus: No se ha especificado la raza, ¿qué se muestra entonces?
- if (kittenRace1 === "")) {
-  html += `<h3 class='card_race'>No se ha especificado la raza</h3>`;
-} else {
-  ...
-}
-*/
