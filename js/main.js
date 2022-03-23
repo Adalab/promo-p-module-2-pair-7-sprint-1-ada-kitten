@@ -10,19 +10,20 @@ const kittenDescOne =
   "(cariñoso) Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!";
 const kittenRaceOne = "British Shorthair";
 
-const kittenImageTwo = "https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg";
+const kittenImageTwo =
+  "https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg";
 const kittenNameTwo = "Fiona";
 const kittenDescTwo =
   "(cariñoso) Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!";
 const kittenRaceTwo = "British Shorthair";
 
-const kittenImageThree = "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg";
+const kittenImageThree =
+  "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg";
 const kittenNameThree = "Cielo";
 const kittenDescThree =
   " (cariñoso) Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle! cariñoso";
 const kittenRaceThree = "British Shorthair";
 
- 
 const kittenOne = `<li class="card"> <article><img
     class="card_img"
     src="${kittenImageOne}"
@@ -59,61 +60,86 @@ ${kittenDescThree}
 
 //catList.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-// Parte 2.3}
-const input_search_desc = document.querySelector('.js_in_search_desc');
-input_search_desc.value = 'cariñoso';
+// Parte 2.3
+const input_search_desc = document.querySelector(".js_in_search_desc");
+input_search_desc.value = "cariñoso";
 const descrSearchText = input_search_desc.value;
 
-if( kittenDescOne.includes(descrSearchText) ) {
+if (kittenDescOne.includes(descrSearchText)) {
   catList.innerHTML = kittenOne;
 }
 
-if( kittenDescTwo.includes(descrSearchText) ) {
+if (kittenDescTwo.includes(descrSearchText)) {
   catList.innerHTML += kittenTwo;
 }
 
-if( kittenDescThree.includes(descrSearchText) ) {
+if (kittenDescThree.includes(descrSearchText)) {
   catList.innerHTML += kittenThree;
 }
 
-
-
-// Parte 2.3 
-const formElement = document.querySelector('.js-new-form');
-if (formElement.classList.contains('collapsed')) {
+// Parte 2.3
+const formElement = document.querySelector(".js-new-form");
+if (formElement.classList.contains("collapsed")) {
   formElement.classList.remove("collapsed");
 } else {
   formElement.classList.add("collapsed");
 }
 
-// Parte 2.4 
+// Parte 2.4 ejercicio 1 y 2
 
-const clickButton = document.querySelector('.js_click');
+const clickButton = document.querySelector(".js_click");
 
-
- clickButton.addEventListener("click", (event) =>{ 
+clickButton.addEventListener("click", (event) => {
   formElement.classList.toggle("collapsed");
-});
-
-//Terminar ejercicio 
-
-const btnAdd = document.queryselector(".js-btn-add");
-btnAdd.addEventListener("click", (event) =>{ 
-  if (valueDesc === "" && valuePhoto === "" && valueName === "") {
-    //completa el código
-  } else {
-    //completa el código
-  }
-
 });
 
 const inputDesc = document.querySelector(".js-input-desc");
 const inputPhoto = document.querySelector(".js-input-photo");
 const inputName = document.querySelector(".js-input-name");
 const labelMesageError = document.querySelector(".js-label-error");
+const btnAdd = document.querySelector(".js-btn-add");
 
-const valueDesc = inputDesc.value;
-const valuePhoto = inputPhoto.value;
-const valueName = inputName.value;
+btnAdd.addEventListener("click", (event) => {
+  // alert("Has hecho click en el botón");
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
 
+  if (valueDesc === "" || valuePhoto === "" || valueName === "") {
+    labelMesageError.innerHTML = "Debes rellenar todos los campos";
+  } else {
+    labelMesageError.innerHTML = "";
+  }
+});
 
+// Parte 2.4 ejercicio 3
+
+const inputDescSearch = document.querySelector(".js_in_search_desc");
+
+const btnSearch = document.querySelector(".js_search");
+btnSearch.addEventListener("click", (event) => {
+  const valueDescSearch = inputDescSearch.value;
+
+  if (valueDescSearch === "") {
+    alert("No hay descripción para la búsqueda");
+  } else {
+    console.log("puede buscar");
+  }
+});
+
+// Parte 2.4 ejercicio 4
+const btnCancel = document.querySelector(".js-button-cancel");
+const newFormElement = document.querySelector(".js-new-form");
+const newFormInputPhoto = document.querySelector(".js-input-photo");
+const newFormInputName = document.querySelector(".js-input-name");
+const newFormInputRace = document.querySelector(".js-input-race");
+const newForminputDesc = document.querySelector(".js-input-desc");
+
+btnCancel.addEventListener("click", (event) => {
+  event.preventDefault();
+  newFormElement.classList.toggle("collapsed");
+  newFormInputPhoto.value = "";
+  newFormInputName.value = "";
+  newFormInputRace.value = "";
+  newForminputDesc.value = "";
+});
