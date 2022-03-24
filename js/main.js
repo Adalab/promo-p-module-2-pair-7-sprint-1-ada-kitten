@@ -78,20 +78,20 @@ if (kittenDescThree.includes(descrSearchText)) {
 }
 
 // Parte 2.3
-const formElement = document.querySelector(".js-new-form");
+/* const formElement = document.querySelector(".js-new-form");
 if (formElement.classList.contains("collapsed")) {
   formElement.classList.remove("collapsed");
 } else {
   formElement.classList.add("collapsed");
-}
+} */
 
 // Parte 2.4 ejercicio 1 y 2
 
-const clickButton = document.querySelector(".js_click");
+/* const clickButton = document.querySelector(".js_click");
 
 clickButton.addEventListener("click", (event) => {
   formElement.classList.toggle("collapsed");
-});
+}); */
 
 const inputDesc = document.querySelector(".js-input-desc");
 const inputPhoto = document.querySelector(".js-input-photo");
@@ -128,7 +128,7 @@ btnSearch.addEventListener("click", (event) => {
 });
 
 // Parte 2.4 ejercicio 4
-const btnCancel = document.querySelector(".js-button-cancel");
+/* const btnCancel = document.querySelector(".js-button-cancel");
 const newFormElement = document.querySelector(".js-new-form");
 const newFormInputPhoto = document.querySelector(".js-input-photo");
 const newFormInputName = document.querySelector(".js-input-name");
@@ -142,4 +142,27 @@ btnCancel.addEventListener("click", (event) => {
   newFormInputName.value = "";
   newFormInputRace.value = "";
   newForminputDesc.value = "";
-});
+}); */
+
+//Parte 2.5 ejercicio 1
+const newFormElement = document.querySelector(".js-new-form");
+const link = document.querySelector(".js_click");
+
+function showNewCatForm() {
+  newFormElement.classList.remove("collapsed");
+}
+function hideNewCatForm() {
+  newFormElement.classList.add("collapsed");
+}
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+  console.log("hola");
+  if (newFormElement.classList.contains("collapsed")) {
+    newFormElement.classList.remove("collapsed");
+  } else {
+    newFormElement.classList.add("collapsed");
+  }
+}
+
+link.addEventListener("click", handleClickNewCatForm);
