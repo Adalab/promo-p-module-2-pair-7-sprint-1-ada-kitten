@@ -238,14 +238,10 @@ function cancelNewKitten(event) {
 
 //Parte 2.5 ejercicio 5
 
-
-
 const input_search_desc = document.querySelector(".js_in_search_desc");
 
- 
-  const buttonSearch = document.querySelector(".js-button-search");
-  buttonSearch.addEventListener("click", filterKitten);
-
+const buttonSearch = document.querySelector(".js-button-search");
+buttonSearch.addEventListener("click", filterKitten);
 
 function filterKitten(event) {
   event.preventDefault();
