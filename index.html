@@ -23,8 +23,8 @@
       <h1>AdaKitten</h1>
       <nav class="menu-nav">
         <ul class="menu">
-          <li class="js_click item">
-            <span class=" fas fa-plus-circle"> </span>
+          <li class="item js-button-new-form">
+            <span class="fas fa-plus-circle"> </span>
           </li>
         </ul>
       </nav>
@@ -32,19 +32,16 @@
   </header>
 
   <main>
-    <section class="new-form   collapsed js-new-form">
+    <section class="new-form js-new-form collapsed">
       <h2 class="title">¿Agregamos un nuevo gatito a Adalab?</h2>
       <form class="form">
-        <input class="input js-input-photo" type="text" placeholder="Url de la foto" />
-        <!--required-->
-        <input class="input js-input-name" type="text" placeholder="Nombre" />
-        <!--required-->
+        <input class="input js-input-photo" type="text" placeholder="Url de la foto" required />
+        <input class="input js-input-name" type="text" placeholder="Nombre" required />
         <input class="input js-input-race" type="text" placeholder="Raza" />
-        <input class="input js-input-desc" type="text" placeholder="Descripción" />
-        <!--required-->
+        <input class="input js-input-desc" type="text" placeholder="Descripción" required />
         <label class="js-label-error"></label>
         <button class="button js-btn-add">Añadir</button>
-        <button class="button-cancel js-button-cancel">Cancelar</button>
+        <button class="button-cancel js-btn-cancel">Cancelar</button>
       </form>
     </section>
 
@@ -56,24 +53,21 @@
     <section class="search">
       <h2 class="title">Filtrar / Buscar</h2>
       <form class="form">
-        <input class="input js_in_search_desc js_in_search_race" type="text" placeholder="Descripción" />
+        <input class="input js_in_search_desc" type="text" placeholder="Descripción" />
         <input class="input" type="select" name="raza" placeholder="Raza" id="raza" />
 
-        <button class="button js_search js-button-search">Buscar</button>
+        <button class="button js-button-search">Buscar</button>
       </form>
     </section>
 
-    <section class="data">
-      <ul class="js-list list .js-new-form">
-
-
-      </ul>
+    <section class="data js-data">
+      <ul class="list js-list"></ul>
     </section>
   </main>
   <footer class="footer">
     <h3 class="subtittle">&copy; Adalab 2022</h3>
   </footer>
-  <script src="./js/main.js" type="text/javascript"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
